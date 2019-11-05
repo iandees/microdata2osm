@@ -22,6 +22,10 @@ def extract_osm_tags(data):
                 cuisine.append('burger')
             if 'Fast Casual' in serves_cuisine:
                 tags['amenity'] = 'fast_food'
+    elif schema_org_type == 'Hotel':
+        tags['tourism'] = 'hotel'
+    elif schema_org_type == 'ExerciseGym':
+        tags['leisure'] = 'fitness_centre'
     else:
         return {}
 
@@ -52,6 +56,9 @@ def extract_osm_tags(data):
     telephone = data.get('telephone')
     if telephone:
         tags['phone'] = telephone
+    faxNumber = data.get('faxNumber')
+    if faxNumber:
+        tags['fax'] = faxNumber
 
     url = data.get('url')
     if url:

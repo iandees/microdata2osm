@@ -40,7 +40,7 @@ def extract_osm_tags(data):
     address = data.get('address', {}).get('addressRegion')
     if address:
         tags['addr:state'] = address
-    address = data.get('address', {}).get('streetAddress')
+    address = data.get('address', {}).get('postalCode')
     if address:
         tags['postcode'] = address
     address = data.get('address', {}).get('addressCountry')

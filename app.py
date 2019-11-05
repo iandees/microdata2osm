@@ -26,6 +26,8 @@ def extract_osm_tags(data):
         tags['tourism'] = 'hotel'
     elif schema_org_type == 'ExerciseGym':
         tags['leisure'] = 'fitness_centre'
+    elif schema_org_type == 'BankOrCreditUnion':
+        tags['amenity'] = 'bank'
     else:
         return {}
 
